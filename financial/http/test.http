@@ -1,0 +1,11 @@
+### 재무제표 조회 - 삼성전자 2024년 4분기
+GET http://localhost:8080/api/financials?symbol=A005930&periodType=YEAR&period=202312
+Accept: application/json
+
+###
+
+### 재무제표 조회 - 업종별 테스트용 (자동차업종)
+GET http://localhost:8080/api/financials?symbol=A105560&periodType=YEAR&period=202312
+Accept: application/json
+
+###
