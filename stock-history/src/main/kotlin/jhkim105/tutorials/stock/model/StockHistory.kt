@@ -1,6 +1,7 @@
 package jhkim105.tutorials.stock.model
 
 import jakarta.persistence.*
+import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.jpa.repository.JpaRepository
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -11,18 +12,26 @@ class StockHistory(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
+
+    @Column(nullable = false)
     val stockId: Long,
-    val exchangeCode: String, // 이전 코드
-    val stockCode: String, // 이전 코드
-    val changeDate: LocalDate, // 변경 일자
-    val createdAt: LocalDateTime = LocalDateTime.now()
+
+    @Column(nullable = false)
+    val changeDate: LocalDate,
+
+    @Column(nullable = true)
+    val beforeExchangeCode: String? = null,
+
+    @Column(nullable = true)
+    val beforeStockCode: String? = null,
+
+    @Column(nullable = false)
+    val afterExchangeCode: String,
+
+    @Column(nullable = false)
+    val afterStockCode: String,
+
+    @CreatedDate
+    val createdAt: LocalDateTime = LocalDateTime.now(),
 )
 
-interface StockHistoryRepository : JpaRepository<StockHistory, Long> {
-
-    fun findTopByExchangeCodeAndStockCodeAndChangeDateLessThanEqualOrderByChangeDateDesc(
-        exchangeCode: String,
-        stockCode: String,
-        businessDate: LocalDate
-    ): StockHistory?
-}
