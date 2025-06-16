@@ -1,13 +1,14 @@
 package jhkim105.tutorials.stock.model
 
 import jakarta.persistence.*
+import jhkim105.tutorials.stock.StockEntityListener
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.LocalDateTime
 
 @Entity
 @Table(name = "stock")
-@EntityListeners(StockEntityListener::class)
+//@EntityListeners(StockEntityListener::class)
 class Stock(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

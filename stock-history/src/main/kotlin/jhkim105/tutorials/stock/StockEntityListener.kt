@@ -1,8 +1,10 @@
-package jhkim105.tutorials.stock.model
+package jhkim105.tutorials.stock
 
 import jakarta.persistence.PostLoad
 import jakarta.persistence.PostPersist
 import jakarta.persistence.PreUpdate
+import jhkim105.tutorials.stock.model.Stock
+import jhkim105.tutorials.stock.model.StockHistory
 import jhkim105.tutorials.stock.repository.StockHistoryRepository
 import org.springframework.context.ApplicationContext
 import java.time.LocalDate

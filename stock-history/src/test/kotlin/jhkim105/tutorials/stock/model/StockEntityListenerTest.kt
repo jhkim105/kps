@@ -3,11 +3,9 @@ package jhkim105.tutorials.stock.model
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.shouldBe
-import jhkim105.tutorials.stock.repository.StockDayPriceRepository
 import jhkim105.tutorials.stock.repository.StockHistoryRepository
 import jhkim105.tutorials.stock.repository.StockRepository
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest
 class StockEntityListenerTest(
